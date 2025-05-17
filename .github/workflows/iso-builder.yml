@@ -10,22 +10,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-    - name: Setup Build Environment
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y pykickstart genisoimage
+      - name: Setup Build Environment
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pykickstart genisoimage
 
-    - name: Simulate ISO Build
-      run: |
-        mkdir -p output
-        echo "Presidential OS ISO" > output/presidential-os.iso
+      - name: Simulate ISO Build
+        run: |
+          mkdir -p output
+          echo "Presidential OS ISO" > output/presidential-os.iso
 
-    - name: Upload ISO Artifact
-      uses: actions/upload-artifact@3a6e9f2366cc605c78dbb2946a6f7325d93d4f52
-
-      with:
-        name: presidential-os
-        path: output/presidential-os.is
+      - name: Upload ISO Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: presidential-os
+          path: output/presidential-os.iso
