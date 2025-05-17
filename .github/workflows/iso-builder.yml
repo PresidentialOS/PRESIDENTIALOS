@@ -24,7 +24,8 @@ jobs:
         echo "Presidential OS ISO" > output/presidential-os.iso
 
     - name: Upload ISO Artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@3a6e9f2366cc605c78dbb2946a6f7325d93d4f52
+
       with:
         name: presidential-os
         path: output/presidential-os.is
